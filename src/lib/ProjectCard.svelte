@@ -3,20 +3,38 @@
   export let subtitle;
   export let description;
   export let imageSrc = false;
-  export let videoUrl = null;
+  export let ytSrc = null;
+  export let soundCloudSrc = null;
   export let links = [];
   export let keywords = [];
+  export let iframeSrc = null;
+  export let iframeTitle = null;
 </script>
 
 <div class="project-card">
   <div class="content flex flex-col items-center justify-center">
     <h1 class="text-2xl font-bold text-center">{title}</h1>
-    <h2 class="text-xl font-bold text-gray-500 rajdhani-light">{subtitle}</h2>
+    <h2 class="text-xl font-bold text-gray-500 rajdhani-semibold">{subtitle}</h2>
     {#if imageSrc}
-      <enhanced:img src={imageSrc} alt={title} class="  media rounded-lg m-4 border-2 border-gray-300" />
+      <enhanced:img src={imageSrc} alt={title} class="mx-auto rounded-lg border-1 border-gray-200" />
     {/if}
 
-    <p class="text-lg text-gray-700 rajdhani-light whitespace-pre-line">{description}</p>
+    {#if ytSrc}
+      <div class="iframe-container my-4 border-2 border-black rounded-md">
+        <iframe
+          src={ytSrc + '&rel=0'}
+          title="youtube embedded player"
+          frameborder="0"
+          width="500"
+          height="315"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    {/if}
+
+    <p class="text-2xl text-gray-700 rajdhani-light whitespace-pre-line">{description}</p>
     <!-- THe links should show the url to the right and also be styled a little nicer-->
     <div class="flex flex-row flex-wrap">
       {#each links as link}
@@ -38,7 +56,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    max-width: 500px;
+    max-width: 580px;
   }
 
   .media {

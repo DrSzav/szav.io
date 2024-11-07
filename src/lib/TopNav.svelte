@@ -18,7 +18,7 @@
   });
 </script>
 
-<nav class="top-nav">
+<nav class="top-nav josefin-slab">
   <ul>
     {#each navOptions as item}
       <li>
@@ -36,7 +36,6 @@
 
 <style>
   .top-nav {
-    font-family: 'Dosis', sans-serif;
     font-weight: 200;
     font-size: 1.2rem;
     position: fixed;

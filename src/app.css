@@ -39,8 +39,39 @@
   font-style: normal;
 }
 
+.dosis-bold {
+  font-family: 'Dosis', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.courgette-regular {
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.josefin-slab {
+  font-family: "Josefin Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.josefin-slab-light {
+  font-family: "Josefin Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
 h1 {
   font-family: 'Dosis', sans-serif;
   font-weight: 700;
   font-style: normal;
+}
+
+.faded-header {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0),rgba(255, 255, 255, .8), rgba(255, 255, 255, 1));
 }

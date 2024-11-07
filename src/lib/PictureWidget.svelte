@@ -4,8 +4,12 @@
   let allPictures = [];
   let scrollY = 0;
   let containerWidth;
-
-  $: offset = scrollY * 2 || 0;
+  let xMultiplier = 1;
+  export let xFlip = false;
+  if (xFlip) {
+    xMultiplier = -1;
+  }
+  $: offset = scrollY * 2 * xMultiplier || 0;
   $: translateX = -offset + 800;
   $: imageWidth = Math.min(500, containerWidth || 500);
   $: imageHeight = imageWidth * 0.75; // Assuming a 4:3 aspect ratio

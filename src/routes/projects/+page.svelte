@@ -2,7 +2,10 @@
   import { fade } from 'svelte/transition';
   import ProjectCard from '../../lib/ProjectCard.svelte';
   import tonepoemsPic from '../../assets/pics/tonepoems.png?enhanced';
+  import taskWithLimitPic from '../../assets/pics/taskWithTimeLimit.png?enhanced';
   import TopNav from '../../lib/TopNav.svelte';
+  import screamioPic from '../../assets/pics/screemio.png?enhanced';
+  import szavPic from '../../assets/pics/szav.io.png?enhanced';
 
   const projects = [
     {
@@ -35,7 +38,24 @@
       ],
     },
     {
+      imageSrc: taskWithLimitPic,
+      title: 'Task With Time Limit',
+      subtitle: 'A utility for environments with limited execution time',
+      description: `
+It’s as simple as it sounds, it puts a time limit on a function call and throws an error because sometimes errors are good!
+
+A little wrapper/utility function that I created primarily for serverless environments. This allows you to call an asynchronous function/promise/promise array and in the event that the function(s) exceed the time limit, force an error to be thrown. 
+
+This is useful for AWS lambda or Google’s cloud functions etc, we can set our time limit to 850 seconds and perform logging/save progress/clean up when the lambda would just otherwise timeout. This is also my first npm package, perhaps something similar already exists, I hope this helps someone else in their micro-service architecture journey. `,
+      keywords: ['npm', 'serverless', 'AWS lambda', 'Cloud Functions', 'microservices', 'promises', 'async'],
+      links: [
+        { url: 'https://www.npmjs.com/package/task-with-time-limit', label: 'NPM package' },
+        { url: 'https://github.com/DrSzav/Task-With-Time-Limit', label: 'Github Repo' },
+      ],
+    },
+    {
       title: 'Szav.io',
+      imageSrc: szavPic,
       subtitle: 'The site that you are on right now!',
       keywords: ['Svelte', 'TailwindCSS', 'Vite', 'SSR', 'SvelteKit', 'javascript', 'html', 'css', 'nodejs'],
       description: `
@@ -53,10 +73,11 @@ Special thanks to Enes Demir @mdenesfe for the Svelte Tailwind Starter Kit!
       links: [
         { url: 'https://szav.io', label: 'This Website' },
         { url: 'https://github.com/mdenesfe/svelte-tailwind-starter-kit', label: 'Svelte Tailwind Starter Kit' },
-        { url: 'https://github.com/sveltejs/realworld', label: 'Svelte real worl example' },
+        { url: 'https://github.com/sveltejs/realworld', label: 'Svelte real world example' },
       ],
     },
     {
+      imageSrc: screamioPic,
       title: 'Screaming Focus (work in progress)',
       subtitle: 'The worst productivity app ever created.',
       keywords: ['React-Native', 'Expo', 'iOS', 'productivity', 'mindfulness', ''],
@@ -67,14 +88,19 @@ The app is simple: you set a timer, and then screams at you for touching your ph
 
 If regular pastel colored mindfulness apps aren’t doing the trick, then this app may be your path to clarity.
  `,
-      links: { url: 'https://github.com/sveltejs/realworld', label: 'Svelte real worl example' },
+      links: [],
     },
   ];
 </script>
 
 <TopNav />
 <div transition:fade>
-  <h1 class="text-3xl font-bold mb-1 p-4 sticky top-12 z-10 bg-white">Szav's Projects:</h1>
+  <h1
+    transition:fade={{ duration: 700 }}
+    class="faded-header text-3xl font-bold mb-1 p-4 sticky top-14 z-10 bg-white josefin-slab"
+  >
+    Szav's Projects:
+  </h1>
   <div class="mt-12 flex-col items-center justify-center">
     <div class="flex flex-col items-center justify-center">
       {#each projects as project}

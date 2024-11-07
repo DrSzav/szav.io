@@ -5,6 +5,7 @@
 
 <TopNav />
 <PictureWidget />
+<PictureWidget xFlip={true} />
 
 <div class="flex items-center flex-row justify-center min-h-screen">
   <div class="flex-1">
@@ -21,7 +22,7 @@
       </div>
     </section>
 
-    <section class="mt-64 p-8 flex-1">
+    <section class="mt-32 p-8 flex-1">
       <div class="max-w-4xl mx-auto">
         <div class="m-4">
           <p class="sm:mx-16 mx:4 rounded p-4 text-2xl text-gray-700 bg-gray-100 rajdhani-light bg-opacity-90">

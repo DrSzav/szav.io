@@ -1,50 +1,23 @@
 <script lang="ts">
-  import ProjectCard from '../../lib/ProjectCard.svelte';
-  import tonepoemsPic from '../../assets/pics/tonepoems.png?enhanced';
+  import ContactLink from '../../lib/ContactLink.svelte';
   import TopNav from '../../lib/TopNav.svelte';
-
-  const projects = [
-    {
-      imageSrc: tonepoemsPic,
-      title: 'Tone Poems',
-      description: 'An interactive writing experience, that allows you to compose music with your words.',
-      linkUrl: 'https://falsesoap.com',
-    },
-    {
-      imageSrc: tonepoemsPic,
-      title: 'Tone Poems',
-      description: 'An interactive writing experience, that allows you to compose music with your words.',
-      linkUrl: 'https://falsesoap.com',
-    },
-    {
-      imageSrc: tonepoemsPic,
-      title: 'Tone Poems',
-      description: 'An interactive writing experience, that allows you to compose music with your words.',
-      linkUrl: 'https://falsesoap.com',
-    },
-    {
-      imageSrc: tonepoemsPic,
-      title: 'Tone Poems',
-      description: 'An interactive writing experience, that allows you to compose music with your words.',
-      linkUrl: 'https://falsesoap.com',
-    },
-    {
-      imageSrc: tonepoemsPic,
-      title: 'Tone Poems',
-      description: 'An interactive writing experience, that allows you to compose music with your words.',
-      linkUrl: 'https://falsesoap.com',
-    },
-  ];
 </script>
 
 <TopNav />
-<h1 class="text-3xl font-bold mb-6 p-4 sticky top-12 z-10 bg-white">Coding Projects:</h1>
-<div class="mt-64 flex-col items-center justify-center">
+<h1 class="text-3xl font-bold mb-6 p-4 sticky top-14 z-10 bg-white josefin-slab">Stay in touch!</h1>
+<div class="mt-4 flex-col items-center justify-center">
   <div class="flex flex-col items-center justify-center">
-    {#each projects as project}
-      <div class="m-4 flex flex-col items-center justify-center">
-        <ProjectCard {...project} />
-      </div>
-    {/each}
+    <section class="mt-16 w-screen">
+      <ContactLink url="https://www.linkedin.com/in/szavio-petrus-raaum-871bb4118/" title="LinkedIn" />
+      <ContactLink url="https://www.instagram.com/falsesoap" title="Instagram" />
+      <ContactLink url="https://www.youtube.com/@ReplenishTheResource" title="Youtube" />
+      <ContactLink phone="6513543296" title="Phone" />
+      <ContactLink email="szavio@gmail.com" title="Email" />
+      <ContactLink title="thanks" />
+      <ContactLink title="for" />
+      <ContactLink title="visiting!" />
+      <ContactLink />
+      <ContactLink />
+    </section>
   </div>
 </div>
